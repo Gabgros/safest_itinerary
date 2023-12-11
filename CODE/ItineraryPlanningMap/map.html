@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <link rel="stylesheet" href="https://unpkg.com/@geoapify/leaflet-address-search-plugin@^1/dist/L.Control.GeoapifyAddressSearch.min.css" />
+        <link rel="stylesheet" href="style.css"/>
+        <title>map</title>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div class="hour-selector" style="position: absolute; top: 150px; left: 20px; z-index: 1000; background-color: rgb(250, 240, 240); padding: 5px;">
+            <label for="hour-dropdown">Select Hour:</label>
+            <select id="hour-dropdown"></select>
+        </div>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+        <script src="leaflet-heat.js"></script>
+        <script src="https://unpkg.com/@geoapify/leaflet-address-search-plugin@^1/dist/L.Control.GeoapifyAddressSearch.min.js"></script>
+        <script type="text/javascript" src="./lib/d3.v5.min.js"></script>
+        <script src="graphology.min.js"></script>
+        <script src="graphology-library.min.js"></script>
+
+        <script src="script.js"></script>
+    </body>
+</html>

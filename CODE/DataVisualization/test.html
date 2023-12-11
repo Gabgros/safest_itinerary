@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .slide {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 70%;
+            height: auto;
+            border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+        }
+
+        .slide .text {
+            width: 30%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: right;
+        }
+
+        .full-page {
+            width: 100vw;
+            height: 120vh; /* Adjust the height as needed */
+            background-color: #95c5f9; /* Choose your desired background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text-section {
+            text-align: center;
+            color: #ffffff; /* Text color */
+        }
+
+        #header-cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('pics/header_cover_junction.jpg') center/cover no-repeat; /* Adjust the URL and background properties */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff; /* Text color on the header cover */
+            position: relative;
+            text-align: center; /* Center-align text */
+        }
+
+        #header-cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjust the transparency here */
+        }
+
+        #header-title {
+            z-index: 1;
+        }
+
+        #header-title h2 {
+            font-size: 2.5em; /* Adjust the font size for the main title */
+            margin-bottom: 10px; /* Add space between main title and subtitle */
+        }
+
+        #header-subtitle {
+            margin-top: -10px; /* Adjust the margin to overlap with the main title */
+        }
+
+        #header-subtitle p {
+            font-size: 1.2em; /* Adjust the font size for the subtitle */
+        }
+
+        #iframe-container {
+            max-width: 1200px;
+            width: 100%;
+            /* padding: 100vh 20px 20px; Adjust padding to accommodate the fixed header */
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        #iframe-container iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #iframe-container iframe:not(:first-child) {
+            margin-bottom: 40px;
+        }
+
+        h1, p {
+            text-align: center;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-cover">
+        <div id="header-title">
+            <h2>Navigate Safely with our Revolutionary Safety Index<br> Your Route to Secure Journeys!</h2>
+        </div>
+        <!-- <div id="header-subtitle">
+            <p></p>
+        </div> -->
+    </div>
+
+
+    <!-- Picture section -->
+    <div class="slide">
+        <img src="pics/accident_average_cases_plot.jpg" alt="Description of Image 1">
+        <div class="text">
+            <h1>Danger is EVERYWHERE! <br>In our daily life.</h1>
+            <p>The accidents seems to increase over the year. <br> What are the governments doing? Where did our tax go?</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/accident_month_percentage.jpg" alt="Description of Image 1">
+        <div class="text">
+            <h1>WINTER is coming.</h1>
+            <p>#StayHome #StaySafe </p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/accident_hour_percentage.jpg" alt="Description of Image 1">
+        <div class="text">
+            <h1>Rush hour!!!</h1>
+            <p>Do you have a flexible working hour? <br> Try to go to work earlier or later to avoid the risk.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/accident_weekday_percentage.jpg" alt="Description of Image 1">
+        <div class="text">
+            <h1>MONDAY BLUE...<br>How about asking a day off?</h1>
+            <p>most people have to go to work on weekdays.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/Weather condition.jpg" alt="Description of Image 1">
+        <div class="text">
+            <h1>Check the Weather forecast before going out.</h1>
+            <p>It's sunny day. let's go out!</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/Humidity.jpg" alt="Description of Image 1">
+        <div class="text">
+            <h1>As it goes wet, it's more dangerous, why?</h1>
+            <p>OK I have no idea why...</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/top_states_rank.png" alt="Description of Image 1">
+        <div class="text">
+            <h1>Lots of accidents happen every year.</h1>
+            <p>Which state is the most dangerous? <br> California!!! Average 300,000 accidents per year.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/top_cities_rank.png" alt="Description of Image 1">
+        <div class="text">
+            <h1>Do you happen to live in HERE? Watch out!</h1>
+            <p>More people, more cars, and more accidents.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="pics/top_street_rank.png" alt="Description of Image 1">
+        <div class="text">
+            <h1>Check you route to work/school.</h1>
+            <p>Is it on the list? OMG... consider moving. NOW!</p>
+        </div>
+    </div>
+
+    <div class="full-page">
+        <div class="text-section">
+            <h1>Time to move your mouse.</h1>
+            <!-- <p>Some important information or details go here.</p> -->
+        </div>
+    </div>
+
+
+    <div id="iframe-container">
+        <h1>Atlanta accidents heatmap</h1>
+        <p>Look how dangerous it is...</p>
+
+        <!-- Embed the Plotly chart -->
+        <iframe src="Interactive/heatmap.html" width="100%" height="600"></iframe>
+
+        <h1>US Accidents from 2016 - 2023 (by state)</h1>
+        <p>What happpened to Cali?</p>
+
+        <iframe src="Interactive/TrafficHeatmapByState.html" width="100%" height="600"></iframe>
+
+        <h1>US Accidents from 2016 - 2023 (by county)</h1>
+        <p>What happpened to Cali?</p>
+
+        <iframe src="Interactive/countyHeatmap.html" width="100%" height="600"></iframe>
+
+        <h1>US Accidents from 2016 - 2023 (by county)</h1>
+        <p>What happpened to Cali?</p>
+
+        <iframe src="Interactive/severity.html" width="100%" height="600"></iframe>
+
+        <h1>Accidents Severity (by county)</h1>
+        <p></p>
+
+        <iframe src="Interactive/severityByCounty.html" width="100%" height="600"></iframe>
+    </div>
+
+    <div class="full-page">
+        <div class="text-section">
+            <h1>NOW... Let me introduce our new feature: Safety index.</h1>
+            <!-- <p>Some important information or details go here.</p> -->
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var cover = document.getElementById('header-cover');
+            var scrollPosition = window.scrollY;
+
+            // Adjust the opacity based on the scroll position
+            cover.style.opacity = 1 - (scrollPosition / 200);
+        });
+    </script>
+</body>
+</html>
+
